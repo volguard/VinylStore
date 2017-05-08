@@ -1,0 +1,11 @@
+Witryna/aplikacja internetowa sklepu/wypo¿yczalni p³yt winylowych.
+
+Ma ona zawieraæ:
+
++Sekcja produktów (œwie¿e dostawy)
++Sekcja sprzeda¿y u¿ywanych winyli
++Sekcja wypo¿yczeñ
++Sekcja pracowników (zmiany w tej sekcji wymagaj¹ specjalnych uprawnieñ)
++Sekcja Info "O nas"
++Sekcja "Aktualnoœci i wydarzenia"
++Dla obs³ugiwania danych zostanie prawdopodobnie wykorzystana LocalDb
