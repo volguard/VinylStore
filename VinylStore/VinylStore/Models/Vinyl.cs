@@ -17,6 +17,7 @@ namespace VinylStore.Models
         double? Price { get; set; }
         bool ForSale { get; set; }
         string Borrower { get; set; }
+        virtual public ICollection<Customer> Customers { get; set; }
 
     }
 }
