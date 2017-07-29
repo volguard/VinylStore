@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace VinylStore.Models
 {
+    [Table("Vinyls")]
     public class Vinyl
     {
-        
-        int Id { get; set; }
-        string Name { get; set;}
-        string Artist { get; set; }
-        string Album { get; set; }
-        DateTime? PublishDate { get; set; }
-        DateTime? LendDeadline { get; set; }
-        double? Price { get; set; }
-        bool ForSale { get; set; }
-        string Borrower { get; set; }
-        virtual public ICollection<Customer> Customers { get; set; }
+        [Key]
+        public int VinylId { get; set; }
+        public string Name { get; set;}
+        public string Artist { get; set; }
+        public string Album { get; set; }
+        public DateTime? PublishDate { get; set; }
+        public DateTime? LendDeadline { get; set; }
+        public double? Price { get; set; }
+        public bool ForSale { get; set; }
+        public virtual int CustomerId { get; set; }
+        virtual public Customer Customer { get; set; }
 
     }
 }

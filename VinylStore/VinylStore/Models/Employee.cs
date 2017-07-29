@@ -7,11 +7,11 @@ namespace VinylStore.Models
 {
     public class Employee
     {
-        int Id { get; set; }
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        string FullName { get; set; }
-        decimal InitialSalary { get; set; }
-        decimal CurrentSalary { get; set; }
+        public int EmployeeId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string FullName { get; set; }
+        public decimal InitialSalary { get; set; }
+        public decimal CurrentSalary { get; set; }
     }
 }
