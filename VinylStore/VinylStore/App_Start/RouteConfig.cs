@@ -16,7 +16,7 @@ namespace VinylStore
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Vinyl", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "NewsAndEvents", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

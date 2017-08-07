@@ -11,10 +11,10 @@ namespace VinylStore.Data_Access_Layer
 {
     public class VinylContext : DbContext
     {
-        public VinylContext() : base("name=VinylContext") { }
-            public DbSet<VinylStore.Models.Vinyl> Vinyls { get; set; }
-            public DbSet<VinylStore.Models.Customer> Customers { get; set; }
-            public DbSet<VinylStore.Models.Employee> Employees { get; set; }
-        
+        public VinylContext() : base("VinylContext") { }
+        public DbSet<VinylStore.Models.SellVinyl> SellVinyls { get; set; }
+        public DbSet<VinylStore.Models.LendVinyl> LendVinyls { get; set; }
+        public DbSet<VinylStore.Models.Customer> Customers { get; set; }
+        public DbSet<VinylStore.Models.Employee> Employees { get; set; }
     }
 }
