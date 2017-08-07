@@ -93,4 +93,3 @@ D:\projekty\VinylStoreC#Academia\VinylStore\VinylStore\bin\Microsoft.AI.WindowsS
 D:\projekty\VinylStoreC#Academia\VinylStore\VinylStore\bin\Microsoft.AI.Web.xml
 D:\projekty\VinylStoreC#Academia\VinylStore\VinylStore\obj\Debug\VinylStore.dll
 D:\projekty\VinylStoreC#Academia\VinylStore\VinylStore\obj\Debug\VinylStore.pdb
-D:\projekty\VinylStoreC#Academia\VinylStore\VinylStore\obj\Debug\VinylStore.csprojResolveAssemblyReference.cache
