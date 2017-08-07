@@ -194,6 +194,7 @@
     <Compile Include="Controllers\LendVinylsController.cs" />
     <Compile Include="Controllers\NewsAndEventsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SellVinylsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Data_Access_Layer\VinylContext.cs" />
@@ -293,6 +294,7 @@
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
