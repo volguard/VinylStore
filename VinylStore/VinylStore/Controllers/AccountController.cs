@@ -170,7 +170,7 @@ namespace VinylStore.Controllers
                     //Tutaj przypis rolę      
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
                     //Tutaj zakończ
-                    return RedirectToAction("Index", "Users");
+                    return RedirectToAction("Index", "User");
                 }
                 ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("BusinessOwner")).ToList(), "Name", "Name");
                 AddErrors(result);
@@ -400,7 +400,7 @@ namespace VinylStore.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("LogOff", "Account");
+            return View("LogOff");
         }
 
         //
@@ -457,7 +457,7 @@ namespace VinylStore.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "NewsAndEvents");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
