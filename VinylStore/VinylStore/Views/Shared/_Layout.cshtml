@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My Vinyl-fuck'in-store!!</title>
+    <title>@ViewBag.Title - Vinyl-store!!</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -27,10 +27,7 @@
                     <li>@Html.ActionLink("Borrow a vinyl!","Index","LendVinyls")</li>
                     <li>@Html.ActionLink("Buy a vinyl!","Index","SellVinyls")</li>
                     <li>@Html.ActionLink("Customers","Index","Customers")</li>
-                    @if (User.IsInRole("BusinessOwner"))
-                    {
                     <li>@Html.ActionLink("Workers", "Index", "Employees")</li>
-                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

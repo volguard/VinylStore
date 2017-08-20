@@ -11,8 +11,8 @@ namespace VinylStore.Models
         public string Name { get; set; }
         public string Artist { get; set; }
         public string Album { get; set; }
-        public DateTime DateOfPublish { get; set; }
-        public decimal Price { get; set; }
-        public int StorageAmount { get; set; }
+        public DateTime? DateOfPublish { get; set; }
+        public decimal? Price { get; set; }
+        public int? StorageAmount { get; set; }
     }
 }

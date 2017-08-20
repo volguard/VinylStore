@@ -16,10 +16,14 @@ namespace VinylStore.Models
         [Display(Name = "Album")]
         public string Album { get; set; }
         [Display(Name = "Date of publish")]
-        public DateTime DateOfPublish { get; set; }
+        public DateTime? DateOfPublish { get; set; }
         [Display(Name = "Id of borrower")]
-        public int CustomerId { get; set; }
+        public int? CustomerId { get; set; }
         [Display(Name = "Name of borrower")]
         public string CustomerFullName { get; set; }
+        [Display(Name = "Vinyl is lend from")]
+        public DateTime? LendFrom { get; set; }
+        [Display(Name="Vinyl is lend to")]
+        public DateTime? LendTo { get; set; }
     }
 }

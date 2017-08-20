@@ -11,7 +11,7 @@ namespace VinylStore.Data_Access_Layer
 {
     public class VinylContext : DbContext
     {
-        public VinylContext() : base("VinylContext") { }
+        public VinylContext() : base("DefaultConnection") { }
         public DbSet<VinylStore.Models.SellVinyl> SellVinyls { get; set; }
         public DbSet<VinylStore.Models.LendVinyl> LendVinyls { get; set; }
         public DbSet<VinylStore.Models.Customer> Customers { get; set; }
