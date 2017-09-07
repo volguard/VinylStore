@@ -6,26 +6,9 @@ using System.Web;
 
 namespace VinylStore.Models
 {
-    public class Employee
+    public class Employee : Person
     {
-        public int Id { get; set; }
-        [Required]
-        [Display(Name ="First name.")]
-        public string FirstName { get; set; }
-        [Required]
-        [Display(Name =" Last name")]
-        public string LastName { get; set; }
-        [Display(Name ="Name")]
-        public string FullName {
-            get
-            {
-                return this.FirstName + " " + this.LastName; 
-            }
-            set
-            {
-                FullName = value;
-            }
-        }
+        
         [Required]
         [Display(Name ="Initial salary.")]
         public decimal? StartSalary { get; set; }
