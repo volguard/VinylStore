@@ -204,9 +204,12 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\ForumPost.cs" />
+    <Compile Include="Models\ForumTopic.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LendVinyl.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NonPersonEntity.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\SellVinyl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -296,6 +299,7 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Account\LogOff.cshtml" />
+    <Content Include="Views\Forum\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
