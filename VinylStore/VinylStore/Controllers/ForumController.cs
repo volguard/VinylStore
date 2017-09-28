@@ -48,19 +48,14 @@ namespace VinylStore.Controllers
             }
             return View(forumPost);
         }
-
-        // GET: Forum/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        
 
         // POST: Forum/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Author,Content,CreationDate")] ForumPost forumPost)
+        public ActionResult CreatePost([Bind(Include = "Id,Author,Content,CreationDate")] ForumPost forumPost)
         {
             if (ModelState.IsValid)
             {
@@ -70,6 +65,19 @@ namespace VinylStore.Controllers
             }
 
             return View(forumPost);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateTopic(ForumTopic forumTopic)
+        {
+            if (ModelState.IsValid)
+            {
+                db.ForumTopics.Add(forumTopic);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            
+            return View(forumTopic);
         }
 
         // GET: Forum/Edit/5
