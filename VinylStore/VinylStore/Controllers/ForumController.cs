@@ -25,7 +25,11 @@ namespace VinylStore.Controllers
         public ActionResult ViewTopic(ForumTopic Topic)
         {
             ViewBag.Subject = Topic.Subject;
-            IEnumerable postsList = db.ForumPosts.Where(x => x.Subject == Topic.Subject ).OrderBy(x=> x.CreationDate).ToList();
+            //var postsList = db.ForumPosts.Where(x => x.Subject == Topic.Subject ).OrderBy(x=> x.CreationDate).ToList();
+            IEnumerable postsList = from x in db.ForumPosts
+                                   where x.Subject == Topic.Subject
+                                   orderby x.CreationDate
+                                   select x;
             return View(postsList);
         }
 
@@ -68,16 +72,22 @@ namespace VinylStore.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateTopic(ForumTopic forumTopic)
+        public ActionResult CreateTopic(string Subject, string Autor, DateTime CreationDate, ForumTopic forumTopic)
         {
             if (ModelState.IsValid)
             {
+                if (forumTopic.Id == 0)
+                    forumTopic.Id = 1;
+
+                /*forumTopic.Autor = Autor;
+                forumTopic.CreationDate = CreationDate;
+                forumTopic.Subject = Subject;*/
                 db.ForumTopics.Add(forumTopic);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            
-            return View(forumTopic);
+
+            return RedirectToAction("Index");
         }
 
         // GET: Forum/Edit/5
