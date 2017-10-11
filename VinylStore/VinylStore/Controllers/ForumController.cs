@@ -25,11 +25,13 @@ namespace VinylStore.Controllers
         public ActionResult ViewTopic(ForumTopic Topic)
         {
             ViewBag.Subject = Topic.Subject;
-            //var postsList = db.ForumPosts.Where(x => x.Subject == Topic.Subject ).OrderBy(x=> x.CreationDate).ToList();
-            IEnumerable postsList = from x in db.ForumPosts
-                                   where x.Subject == Topic.Subject
-                                   orderby x.CreationDate
-                                   select x;
+            var postsList = db.ForumPosts.Where(x => x.Subject == Topic.Subject).OrderBy(x=> x.CreationDate).ToList();
+            //var postsList = from x in db.ForumPosts
+            //                       //where QuerryExpressionHelper.IsTheSameSubject(Topic)
+            //                       orderby x.CreationDate
+            //                       select (ForumPost)x;
+            //var showList = new List<ForumPost>();
+            //showList = postsList.Where(QuerryExpressionHelper.IsTheSameSubject()).ToList();
             return View(postsList);
         }
 
