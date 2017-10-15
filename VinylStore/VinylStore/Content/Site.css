@@ -42,3 +42,9 @@ a:hover {
 	color: #238be2;
 	text-decoration: none;
 }
+.navbar-inverse .navbar-brand {
+	color: chartreuse;
+}
+.navbar-inverse .navbar-nav > li > a {
+	color: chartreuse;
+}
