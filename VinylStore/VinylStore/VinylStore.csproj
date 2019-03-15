@@ -173,8 +173,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LendVinylsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NewsAndEventsController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SellVinylsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -278,6 +286,33 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Forum\Index.cshtml" />
+    <Content Include="Views\Forum\ViewTopic.cshtml" />
+    <Content Include="Views\LendVinyls\Create.cshtml" />
+    <Content Include="Views\LendVinyls\Delete.cshtml" />
+    <Content Include="Views\LendVinyls\Details.cshtml" />
+    <Content Include="Views\LendVinyls\Edit.cshtml" />
+    <Content Include="Views\LendVinyls\Index.cshtml" />
+    <Content Include="Views\NewsAndEvents\About.cshtml" />
+    <Content Include="Views\NewsAndEvents\Contact.cshtml" />
+    <Content Include="Views\NewsAndEvents\Index.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\SendVinyls\Create.cshtml" />
+    <Content Include="Views\SendVinyls\Delete.cshtml" />
+    <Content Include="Views\SendVinyls\Details.cshtml" />
+    <Content Include="Views\SendVinyls\Edit.cshtml" />
+    <Content Include="Views\SendVinyls\Index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

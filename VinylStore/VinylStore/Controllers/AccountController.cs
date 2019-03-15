@@ -15,6 +15,7 @@ namespace VinylStore.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        ApplicationDbContext context = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -51,7 +52,8 @@ namespace VinylStore.Controllers
                 _userManager = value;
             }
         }
-
+        
+        
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -75,7 +77,7 @@ namespace VinylStore.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -139,6 +141,8 @@ namespace VinylStore.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
+                                            .ToList(), "Name", "Name");
             return View();
         }
 
@@ -156,15 +160,19 @@ namespace VinylStore.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    //Tutaj przypis rolę      
+                    await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
+                    //Tutaj zakończ
+                    return RedirectToAction("Index", "User");
                 }
+                ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("BusinessOwner")).ToList(), "Name", "Name");
                 AddErrors(result);
             }
 
@@ -392,7 +400,7 @@ namespace VinylStore.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return View("LogOff");
         }
 
         //
@@ -449,7 +457,7 @@ namespace VinylStore.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "NewsAndEvents");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
