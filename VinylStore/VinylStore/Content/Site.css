@@ -1,6 +1,12 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+	background: url(Vinyl_disc_icon.svg) #1db100 top left no-repeat;
+}
+div {
+	font-family: Rockwell;
+	color: #1db100;
+	background-color: #000000;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +27,24 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+a {
+	color: #1db100
+}
+a:link {
+	color: #1db100
+}
+a:hover {
+	color: #051a98
+}
+.btn:hover,
+.btn:focus {
+	color: #238be2;
+	text-decoration: none;
+}
+.navbar-inverse .navbar-brand {
+	color: chartreuse;
+}
+.navbar-inverse .navbar-nav > li > a {
+	color: chartreuse;
 }
