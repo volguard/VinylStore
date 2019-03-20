@@ -183,12 +183,22 @@
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SellVinylsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Data_Access_Layer\VinylContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\ForumFactory.cs" />
+    <Compile Include="Models\ForumPost.cs" />
+    <Compile Include="Models\ForumTopic.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LendVinyl.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NonPersonEntity.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\SellVinyl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -200,6 +210,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Vinyl_disc_icon.svg" />
+    <Content Include="DatabaseScripts\20170819_Update_Customer_Column.sql" />
+    <Content Include="DatabaseScripts\29072017_Db_Creation.sql" />
+    <Content Include="DatabaseScripts\DbBasicScript.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
